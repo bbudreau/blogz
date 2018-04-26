@@ -1,15 +1,14 @@
 {% extends 'base.html'%}
 
 {% block content %}
+    <h1>Blog Posts</h1>
+
+        {% for post in posts %}
+            <a href="/blog?id={{post.id}}"><p><h2>{{ post.title }}</h2></p></a>
+            <p>{{ post.body }}</p>
+            <p>Posted by: <a href="/blog?userid={{post.owner_id}}">{{ post.owner.username }}</a></p>
+
+
     
-    {% if blogs|length == 0 %}
-    <p>No Blogs Posted Yet...</p>
-    {% endif %}
-    {% for blog in blogs %}
-    <h1><a href='/blog?id={{blog.id}}'>{{blog.title}}</a></h1>
-
-    <p>{{blog.body}}</p>
-
-    <hr>
-    {% endfor %}
+        {% endfor %}
 {% endblock %}
