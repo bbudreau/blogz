@@ -6,11 +6,13 @@
         </title>
     </head>
     <body>
-        <h1><a href="/">Blogz!</a></h1>
+        <p style="text-align: right"><a href="/login">Login</a>
+        <a href="/logout">Logout</a></p>
+        <h1 style="text-align: center"><a href="/">Blogz!</a></h1>
         <a href="/blog" class="left spacing">View all Posts</a>
         <a href="/add_post">Add a Blog Entry</a>
-        <a href="/logout" class="right">Logout</a>
-        <a href="/login" class="right spacing">Login</a>
+        
+        
         {% block content %}
         {% endblock %}
 
